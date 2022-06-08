@@ -3,7 +3,6 @@ from OpenGL.GLU import *
 from OpenGL.GLUT import *
 import random
 
-
 def init():
     glViewport(0, 0, 500, 500)
     glMatrixMode(GL_PROJECTION)
