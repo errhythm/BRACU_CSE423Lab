@@ -1,17 +1,10 @@
 from OpenGL.GL import *
-from OpenGL.GLUT import *
 from OpenGL.GLU import *
+from OpenGL.GLUT import *
 import random
 
-def draw_50points(x, y):
-    for i in range(50):
-        glBegin(GL_POINTS)
-        glVertex2f(x, y)
-        glEnd()
-        x = random.randint(0, 500)
-        y = random.randint(0, 500)
 
-def iterate():
+def init():
     glViewport(0, 0, 500, 500)
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
@@ -22,17 +15,29 @@ def iterate():
 def showScreen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
-    iterate()
-    glColor3f(1.0, 1.0, 0.0) #konokichur color set (RGB)
+    init()
     #call the draw methods here
-    draw_50points(250, 250)
+    draw()
     glutSwapBuffers()
+
+# put your drawing codes inside this 'draw' function
+def draw():
+    glClear(GL_COLOR_BUFFER_BIT)
+    glPointSize(2)
+    glLoadIdentity()
+    glBegin(GL_POINTS)
+    for i in range(50):
+        glVertex2d(random.randint(0, 500), random.randint(0, 500))
+    glEnd()
+
 
 glutInit()
 glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(500, 500) #window size
+glutInitWindowSize(500, 500)
 glutInitWindowPosition(0, 0)
-wind = glutCreateWindow(b"OpenGL Coding Practice") #window name
+glutCreateWindow(b"Lab Assignment 1 - Problem 1")
 glutDisplayFunc(showScreen)
+
+init()
 
 glutMainLoop()
