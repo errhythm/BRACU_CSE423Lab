@@ -113,9 +113,9 @@ def draw_nine():
 
 
 def draw_points(x, y):
-    glPointSize(5)  # pixel size. by default 1 thake
+    glPointSize(5)
     glBegin(GL_POINTS)
-    glVertex2f(x, y)  # jekhane show korbe pixel
+    glVertex2f(x, y)
     glEnd()
 
 
@@ -140,9 +140,9 @@ def showScreen():
 
 glutInit()
 glutInitDisplayMode(GLUT_RGBA)
-glutInitWindowSize(500, 500)  # window size
+glutInitWindowSize(500, 500)
 glutInitWindowPosition(0, 0)
-wind = glutCreateWindow(b"Student ID: 20101298 | Let's Draw: 98")  # window name
+wind = glutCreateWindow(b"Student ID: 20101298 | Let's Draw: 98")
 glutDisplayFunc(showScreen)
 
 glutMainLoop()
