@@ -12,38 +12,9 @@ def draw_points(x, y):
     glEnd()
 
 
-def eightWayCircle(x, y, radius):
-    # The Biggest Circle
-    midPointCircleAlgorithm(x, y, radius)
-    # This is the Right Circle
-    midPointCircleAlgorithm(x + (radius / 2), y, radius / 2)
-    # This is the Above Circle
-    midPointCircleAlgorithm(x, y + (radius / 2), radius / 2)
-    # This is the Below Circle
-    midPointCircleAlgorithm(x, y - (radius / 2), radius / 2)
-    # This is the Left Circle
-    midPointCircleAlgorithm(x - (radius / 2), y, radius / 2)
-    x0 = x + (radius / 2) - 33
-    y0 = y + (math.sin(45) * (radius / 2)) - 33
-    # NORTH EAST Circle
-    midPointCircleAlgorithm(x0, y0, radius / 2)
-    x0 = x + (radius / 2) - 33
-    y0 = y - (math.sin(45) * (radius / 2)) + 33
-    # SOUTH EAST Circle
-    midPointCircleAlgorithm(x0, y0, radius / 2)
-    x0 = x - (radius / 2) + 33
-    y0 = y - (math.sin(45) * (radius / 2)) + 33
-    # SOUTH WEST Circle
-    midPointCircleAlgorithm(x0, y0, radius / 2)
-    x0 = x - (radius / 2) + 33
-    y0 = y + (math.sin(45) * (radius / 2)) - 33
-    # NORTH WEST Circle
-    midPointCircleAlgorithm(x0, y0, radius / 2)
+# Starting from here
 
-
-# This function will plot to converted zones
-# Including zone 1
-def Circlepoints(x, y, x0, y0):
+def zoneCircleConvert(x, y, x0, y0):
     draw_points(x + x0, y + y0)
     draw_points(y + x0, x + y0)
     draw_points(y + x0, -x + y0)
@@ -54,28 +25,48 @@ def Circlepoints(x, y, x0, y0):
     draw_points(-x + x0, y + y0)
 
 
-# This function is the MidPoint Circle Algorithm
-def midPointCircleAlgorithm(x0, y0, radius):
-    # Initial d
+def midPoint(x0, y0, radius):
     d = 1 - radius
     x = 0
     y = radius
-    Circlepoints(x, y, x0, y0)
-
-    while (x < y):
-
-        if d < 0:
-            # IF EAST
-            d = d + 2 * x + 3
-            x = x + 1
-        else:
-            # IF SOUTH
+    zoneCircleConvert(x, y, x0, y0)
+    while x < y:
+        if d >= 0:
             d = d + 2 * x - 2 * y + 5
             x = x + 1
             y = y - 1
-        Circlepoints(x, y, x0, y0)
+        else:
+            d = d + 2 * x + 3
+            x = x + 1
+        zoneCircleConvert(x, y, x0, y0)
 
 
+def eightWay(x, y, radius):
+    midPoint(x, y, radius)
+
+    midPoint(x + (radius / 2), y, radius / 2)
+    midPoint(x, y + (radius / 2), radius / 2)
+    midPoint(x, y - (radius / 2), radius / 2)
+    midPoint(x - (radius / 2), y, radius / 2)
+
+    x0 = x + (radius / 2) - 38
+    y0 = y + (math.sin(45) * (radius / 2)) - 38
+    midPoint(x0, y0, radius / 2)
+
+    x0 = x + (radius / 2) - 38
+    y0 = y - (math.sin(45) * (radius / 2)) + 38
+    midPoint(x0, y0, radius / 2)
+
+    x0 = x - (radius / 2) + 38
+    y0 = y - (math.sin(45) * (radius / 2)) + 38
+    midPoint(x0, y0, radius / 2)
+
+    x0 = x - (radius / 2) + 38
+    y0 = y + (math.sin(45) * (radius / 2)) - 38
+    midPoint(x0, y0, radius / 2)
+
+
+# Screen Files
 def screen():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
     glLoadIdentity()
@@ -85,7 +76,7 @@ def screen():
     glOrtho(0.0, 1000, 0.0, 1000, 0.0, 1.0)
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
-    eightWayCircle(475, 475, 300)
+    eightWay(475, 475, 350)
     glutSwapBuffers()
 
 
@@ -93,6 +84,6 @@ glutInit()
 glutInitDisplayMode(GLUT_RGBA)
 glutInitWindowSize(768, 768)
 glutInitWindowPosition(0, 0)
-wind = glutCreateWindow(b"8 Way Circle")
+glutCreateWindow(b"Lab Assignment 3 - 20101298")
 glutDisplayFunc(screen)
 glutMainLoop()
