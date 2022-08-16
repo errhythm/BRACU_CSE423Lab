@@ -2,6 +2,7 @@ from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
 
+
 def find_zone(dx, dy):
     if abs(dx) <= abs(dy):
         if dx >= 0 and dy >= 0:
@@ -97,12 +98,14 @@ def draw_lines(x1, y1, x2, y2):
 
     midpointline(px1, py1, px2, py2, zone)
 
+
 def draw_eight():
     draw_lines(300, 350, 400, 350)
     draw_lines(300, 150, 400, 150)
     draw_lines(300, 350, 300, 150)
     draw_lines(400, 150, 400, 350)
     draw_lines(300, 250, 400, 250)
+
 
 def draw_nine():
     draw_lines(100, 350, 200, 350)
