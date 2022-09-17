@@ -12,10 +12,6 @@
 
 **Email: ehsanur.rahman.rhythm@g.bracu.ac.bd**
 
-**Name:** Ehsanur Rahman Rhythm  
-**ID:** 20101298  
-**Section:** 09 
-
 ### Submissions
 
 | **Submission No.** | Github Link | Question |
