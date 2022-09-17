@@ -17,8 +17,8 @@
 | **Submission No.** | Github Link | Question |
 | ----------- | ----------- | ----------- |
 | Assignment 1 | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Assignment%201) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%201/Assignment%201.pdf) |
-| Assignment 2 | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Assignment%202) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%201/Assignment%201.pdf) |
-| Assignment 3 | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Assignment%203) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%201/Assignment%201.pdf) |
-| Lab Final | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Final) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%201/Assignment%201.pdf) |
+| Assignment 2 | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Assignment%202) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%202/Assignment%202.pdf) |
+| Assignment 3 | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Assignment%203) | [Click Here](https://github.com/errhythm/CSE423Lab/blob/main/Lab%20Assignment%203/Assignment%203.pdf) |
+| Lab Final | [Click Here](https://github.com/errhythm/CSE423Lab/tree/main/Lab%20Final) | |
 
 
